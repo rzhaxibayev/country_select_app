@@ -79,7 +79,7 @@ void main() {
       when(() => mockDio.get(any())).thenAnswer((_) async => mockResponse);
 
       /// Act
-      final response = await service.loadStates(countryId: 2202);
+      final response = await service.loadStates(countryId: 13);
 
       /// Assert
       const expectedResponse = [
@@ -105,7 +105,7 @@ void main() {
       when(() => mockDio.get(any())).thenThrow(mockError);
 
       // Act & Assert
-      expect(service.loadStates(countryId: 2202), throwsA(isA<DioException>()));
+      expect(service.loadStates(countryId: 13), throwsA(isA<DioException>()));
     });
   });
 }
