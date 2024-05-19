@@ -1,11 +1,15 @@
+import 'package:country_select_app/features/countries/data/service/countries_service.dart';
+import 'package:country_select_app/features/countries/data/service/countries_service_impl.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
+/// Dependency Injection registrar
 class DiResolver {
   static final _di = GetIt.instance;
 
   static Future<void> register() async {
     _registerNetworkingClient();
+    _registerServices();
   }
 
   /// In this app we use Dio library for networking client.
@@ -23,5 +27,10 @@ class DiResolver {
     final dio = Dio(options);
 
     _di.registerLazySingleton<Dio>(() => dio);
+  }
+
+  static void _registerServices() {
+    _di.registerLazySingleton<CountriesService>(
+        () => CountriesServiceImpl(apiClient: _di.get<Dio>()));
   }
 }

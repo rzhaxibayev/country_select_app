@@ -14,11 +14,16 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+StateDto _$StateDtoFromJson(Map<String, dynamic> json) {
+  return _StateDto.fromJson(json);
+}
+
 /// @nodoc
 mixin _$StateDto {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $StateDtoCopyWith<StateDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -100,9 +105,12 @@ class __$$StateDtoImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$StateDtoImpl implements _StateDto {
   const _$StateDtoImpl({required this.id, required this.name});
+
+  factory _$StateDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$StateDtoImplFromJson(json);
 
   @override
   final String id;
@@ -123,6 +131,7 @@ class _$StateDtoImpl implements _StateDto {
             (identical(other.name, name) || other.name == name));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name);
 
@@ -131,11 +140,21 @@ class _$StateDtoImpl implements _StateDto {
   @pragma('vm:prefer-inline')
   _$$StateDtoImplCopyWith<_$StateDtoImpl> get copyWith =>
       __$$StateDtoImplCopyWithImpl<_$StateDtoImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$StateDtoImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _StateDto implements StateDto {
   const factory _StateDto(
       {required final String id, required final String name}) = _$StateDtoImpl;
+
+  factory _StateDto.fromJson(Map<String, dynamic> json) =
+      _$StateDtoImpl.fromJson;
 
   @override
   String get id;

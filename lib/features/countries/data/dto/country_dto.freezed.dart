@@ -14,11 +14,16 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
+CountryDto _$CountryDtoFromJson(Map<String, dynamic> json) {
+  return _CountryDto.fromJson(json);
+}
+
 /// @nodoc
 mixin _$CountryDto {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $CountryDtoCopyWith<CountryDto> get copyWith =>
       throw _privateConstructorUsedError;
@@ -101,9 +106,12 @@ class __$$CountryDtoImplCopyWithImpl<$Res>
 }
 
 /// @nodoc
-
+@JsonSerializable()
 class _$CountryDtoImpl implements _CountryDto {
   const _$CountryDtoImpl({required this.id, required this.name});
+
+  factory _$CountryDtoImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CountryDtoImplFromJson(json);
 
   @override
   final String id;
@@ -124,6 +132,7 @@ class _$CountryDtoImpl implements _CountryDto {
             (identical(other.name, name) || other.name == name));
   }
 
+  @JsonKey(ignore: true)
   @override
   int get hashCode => Object.hash(runtimeType, id, name);
 
@@ -132,12 +141,22 @@ class _$CountryDtoImpl implements _CountryDto {
   @pragma('vm:prefer-inline')
   _$$CountryDtoImplCopyWith<_$CountryDtoImpl> get copyWith =>
       __$$CountryDtoImplCopyWithImpl<_$CountryDtoImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$CountryDtoImplToJson(
+      this,
+    );
+  }
 }
 
 abstract class _CountryDto implements CountryDto {
   const factory _CountryDto(
       {required final String id,
       required final String name}) = _$CountryDtoImpl;
+
+  factory _CountryDto.fromJson(Map<String, dynamic> json) =
+      _$CountryDtoImpl.fromJson;
 
   @override
   String get id;
