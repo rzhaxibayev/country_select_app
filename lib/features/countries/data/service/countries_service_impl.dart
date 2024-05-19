@@ -1,5 +1,5 @@
 import 'package:country_select_app/features/countries/data/dto/country_dto.dart';
-import 'package:country_select_app/features/countries/data/dto/state_dto.dart';
+import 'package:country_select_app/features/countries/data/dto/country_state_dto.dart';
 import 'package:country_select_app/features/countries/data/service/countries_service.dart';
 import 'package:dio/dio.dart';
 
@@ -28,7 +28,7 @@ class CountriesServiceImpl implements CountriesService {
   }
 
   @override
-  Future<List<StateDto>> loadStates({required int countryId}) async {
+  Future<List<CountryStateDto>> loadStates({required int countryId}) async {
     final response = await _apiClient.get(
       '${_Constants.countriesPath}/$countryId${_Constants.statesPath}',
     );
@@ -36,7 +36,7 @@ class CountriesServiceImpl implements CountriesService {
 
     return data
         .map(
-          (stateJson) => StateDto.fromJson(stateJson),
+          (stateJson) => CountryStateDto.fromJson(stateJson),
         )
         .toList();
   }

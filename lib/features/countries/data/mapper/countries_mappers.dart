@@ -1,12 +1,12 @@
 import 'package:country_select_app/features/countries/data/dto/country_dto.dart';
-import 'package:country_select_app/features/countries/data/dto/state_dto.dart';
+import 'package:country_select_app/features/countries/data/dto/country_state_dto.dart';
 import 'package:country_select_app/features/countries/domain/model/country.dart';
-import 'package:country_select_app/features/countries/domain/model/state.dart';
+import 'package:country_select_app/features/countries/domain/model/country_state.dart';
 
 extension CountryDtoExtension on CountryDto {
-  Country toDomain() => Country(id: id, name: name);
+  Country toDomain() => Country(id: id, name: value);
 }
 
-extension StateDtoExtension on StateDto {
-  State toDomain() => State(id: id, name: name);
+extension CountryStateDtoExtension on CountryStateDto {
+  CountryState toDomain() => CountryState(id: id, name: value);
 }

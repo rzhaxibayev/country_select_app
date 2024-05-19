@@ -1,5 +1,5 @@
 import 'package:country_select_app/features/countries/data/dto/country_dto.dart';
-import 'package:country_select_app/features/countries/data/dto/state_dto.dart';
+import 'package:country_select_app/features/countries/data/dto/country_state_dto.dart';
 
 /// This an interface for a remote data source.
 abstract class CountriesService {
@@ -8,5 +8,5 @@ abstract class CountriesService {
 
   /// This method is for fetching a list of states from a remote endpoint for
   /// a selected country.
-  Future<List<StateDto>> loadStates({required int countryId});
+  Future<List<CountryStateDto>> loadStates({required int countryId});
 }

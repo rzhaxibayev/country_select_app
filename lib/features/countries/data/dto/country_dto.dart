@@ -7,7 +7,7 @@ part 'country_dto.g.dart';
 class CountryDto with _$CountryDto {
   const factory CountryDto({
     required int id,
-    required String name,
+    required String value,
   }) = _CountryDto;
 
   factory CountryDto.fromJson(Map<String, dynamic> json) =>

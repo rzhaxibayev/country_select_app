@@ -1,5 +1,5 @@
 import 'package:country_select_app/features/countries/data/dto/country_dto.dart';
-import 'package:country_select_app/features/countries/data/dto/state_dto.dart';
+import 'package:country_select_app/features/countries/data/dto/country_state_dto.dart';
 import 'package:country_select_app/features/countries/data/service/countries_service.dart';
 import 'package:country_select_app/features/countries/data/service/countries_service_impl.dart';
 import 'package:dio/dio.dart';
@@ -24,9 +24,9 @@ void main() {
       final mockResponse = Response(
         requestOptions: RequestOptions(path: ''),
         data: [
-          {'id': 13, 'name': 'Australia'},
-          {'id': 86, 'name': 'Germany'},
-          {'id': 165, 'name': 'New Zealand'},
+          {'id': 13, 'value': 'Australia'},
+          {'id': 86, 'value': 'Germany'},
+          {'id': 165, 'value': 'New Zealand'},
         ],
         statusCode: 200,
       );
@@ -37,9 +37,9 @@ void main() {
 
       /// Assert
       const expectedResponse = [
-        CountryDto(id: 13, name: 'Australia'),
-        CountryDto(id: 86, name: 'Germany'),
-        CountryDto(id: 165, name: 'New Zealand'),
+        CountryDto(id: 13, value: 'Australia'),
+        CountryDto(id: 86, value: 'Germany'),
+        CountryDto(id: 165, value: 'New Zealand'),
       ];
       expect(response.length, 3);
       expect(response, expectedResponse);
@@ -70,9 +70,9 @@ void main() {
       final mockResponse = Response(
         requestOptions: RequestOptions(path: ''),
         data: [
-          {'id': 2202, 'name': 'Auckland'},
-          {'id': 6888, 'name': 'Centerbury'},
-          {'id': 2211, 'name': 'Wellington'},
+          {'id': 2202, 'value': 'Auckland'},
+          {'id': 6888, 'value': 'Centerbury'},
+          {'id': 2211, 'value': 'Wellington'},
         ],
         statusCode: 200,
       );
@@ -83,9 +83,9 @@ void main() {
 
       /// Assert
       const expectedResponse = [
-        StateDto(id: 2202, name: 'Auckland'),
-        StateDto(id: 6888, name: 'Centerbury'),
-        StateDto(id: 2211, name: 'Wellington'),
+        CountryStateDto(id: 2202, value: 'Auckland'),
+        CountryStateDto(id: 6888, value: 'Centerbury'),
+        CountryStateDto(id: 2211, value: 'Wellington'),
       ];
       expect(response.length, 3);
       expect(response, expectedResponse);

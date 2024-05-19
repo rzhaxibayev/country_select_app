@@ -1,19 +1,21 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'state_dto.dart';
+part of 'country_state_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$StateDtoImpl _$$StateDtoImplFromJson(Map<String, dynamic> json) =>
-    _$StateDtoImpl(
+_$CountryStateDtoImpl _$$CountryStateDtoImplFromJson(
+        Map<String, dynamic> json) =>
+    _$CountryStateDtoImpl(
       id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
+      value: json['value'] as String,
     );
 
-Map<String, dynamic> _$$StateDtoImplToJson(_$StateDtoImpl instance) =>
+Map<String, dynamic> _$$CountryStateDtoImplToJson(
+        _$CountryStateDtoImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'name': instance.name,
+      'value': instance.value,
     };
