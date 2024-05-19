@@ -9,11 +9,11 @@ part of 'country_dto.dart';
 _$CountryDtoImpl _$$CountryDtoImplFromJson(Map<String, dynamic> json) =>
     _$CountryDtoImpl(
       id: (json['id'] as num).toInt(),
-      name: json['name'] as String,
+      value: json['value'] as String,
     );
 
 Map<String, dynamic> _$$CountryDtoImplToJson(_$CountryDtoImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'name': instance.name,
+      'value': instance.value,
     };

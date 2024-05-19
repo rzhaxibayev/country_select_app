@@ -1,7 +1,7 @@
 import 'package:country_select_app/features/countries/data/mapper/countries_mappers.dart';
 import 'package:country_select_app/features/countries/data/service/countries_service.dart';
 import 'package:country_select_app/features/countries/domain/model/country.dart';
-import 'package:country_select_app/features/countries/domain/model/state.dart';
+import 'package:country_select_app/features/countries/domain/model/country_state.dart';
 import 'package:country_select_app/features/countries/domain/repository/countries_repository.dart';
 
 class CountriesRepositoryImpl implements CountriesRepository {
@@ -19,7 +19,7 @@ class CountriesRepositoryImpl implements CountriesRepository {
   }
 
   @override
-  Future<List<State>> loadStates({
+  Future<List<CountryState>> loadStates({
     required int countryId,
   }) async {
     final networkData = await _service.loadStates(countryId: countryId);
