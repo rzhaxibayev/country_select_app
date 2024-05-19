@@ -20,7 +20,7 @@ StateDto _$StateDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$StateDto {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -34,7 +34,7 @@ abstract class $StateDtoCopyWith<$Res> {
   factory $StateDtoCopyWith(StateDto value, $Res Function(StateDto) then) =
       _$StateDtoCopyWithImpl<$Res, StateDto>;
   @useResult
-  $Res call({String id, String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -57,7 +57,7 @@ class _$StateDtoCopyWithImpl<$Res, $Val extends StateDto>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -74,7 +74,7 @@ abstract class _$$StateDtoImplCopyWith<$Res>
       __$$StateDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -95,7 +95,7 @@ class __$$StateDtoImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -113,7 +113,7 @@ class _$StateDtoImpl implements _StateDto {
       _$$StateDtoImplFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
   final String name;
 
@@ -150,14 +150,14 @@ class _$StateDtoImpl implements _StateDto {
 }
 
 abstract class _StateDto implements StateDto {
-  const factory _StateDto(
-      {required final String id, required final String name}) = _$StateDtoImpl;
+  const factory _StateDto({required final int id, required final String name}) =
+      _$StateDtoImpl;
 
   factory _StateDto.fromJson(Map<String, dynamic> json) =
       _$StateDtoImpl.fromJson;
 
   @override
-  String get id;
+  int get id;
   @override
   String get name;
   @override

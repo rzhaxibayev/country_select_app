@@ -20,7 +20,7 @@ CountryDto _$CountryDtoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$CountryDto {
-  String get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -35,7 +35,7 @@ abstract class $CountryDtoCopyWith<$Res> {
           CountryDto value, $Res Function(CountryDto) then) =
       _$CountryDtoCopyWithImpl<$Res, CountryDto>;
   @useResult
-  $Res call({String id, String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -58,7 +58,7 @@ class _$CountryDtoCopyWithImpl<$Res, $Val extends CountryDto>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -75,7 +75,7 @@ abstract class _$$CountryDtoImplCopyWith<$Res>
       __$$CountryDtoImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -96,7 +96,7 @@ class __$$CountryDtoImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -114,7 +114,7 @@ class _$CountryDtoImpl implements _CountryDto {
       _$$CountryDtoImplFromJson(json);
 
   @override
-  final String id;
+  final int id;
   @override
   final String name;
 
@@ -152,14 +152,13 @@ class _$CountryDtoImpl implements _CountryDto {
 
 abstract class _CountryDto implements CountryDto {
   const factory _CountryDto(
-      {required final String id,
-      required final String name}) = _$CountryDtoImpl;
+      {required final int id, required final String name}) = _$CountryDtoImpl;
 
   factory _CountryDto.fromJson(Map<String, dynamic> json) =
       _$CountryDtoImpl.fromJson;
 
   @override
-  String get id;
+  int get id;
   @override
   String get name;
   @override

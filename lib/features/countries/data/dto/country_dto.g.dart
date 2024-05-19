@@ -8,7 +8,7 @@ part of 'country_dto.dart';
 
 _$CountryDtoImpl _$$CountryDtoImplFromJson(Map<String, dynamic> json) =>
     _$CountryDtoImpl(
-      id: json['id'] as String,
+      id: (json['id'] as num).toInt(),
       name: json['name'] as String,
     );
 

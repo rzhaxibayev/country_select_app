@@ -8,5 +8,5 @@ abstract class CountriesService {
 
   /// This method is for fetching a list of states from a remote endpoint for
   /// a selected country.
-  Future<List<StateDto>> loadState({required String countryId});
+  Future<List<StateDto>> loadStates({required int countryId});
 }

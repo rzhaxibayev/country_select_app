@@ -28,7 +28,7 @@ class CountriesServiceImpl implements CountriesService {
   }
 
   @override
-  Future<List<StateDto>> loadState({required String countryId}) async {
+  Future<List<StateDto>> loadStates({required int countryId}) async {
     final response = await _apiClient.get(
       '${_Constants.countriesPath}/$countryId${_Constants.statesPath}',
     );

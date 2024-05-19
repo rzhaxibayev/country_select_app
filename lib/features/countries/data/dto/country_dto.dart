@@ -6,7 +6,7 @@ part 'country_dto.g.dart';
 @freezed
 class CountryDto with _$CountryDto {
   const factory CountryDto({
-    required String id,
+    required int id,
     required String name,
   }) = _CountryDto;
 

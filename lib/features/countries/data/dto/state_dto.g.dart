@@ -8,7 +8,7 @@ part of 'state_dto.dart';
 
 _$StateDtoImpl _$$StateDtoImplFromJson(Map<String, dynamic> json) =>
     _$StateDtoImpl(
-      id: json['id'] as String,
+      id: (json['id'] as num).toInt(),
       name: json['name'] as String,
     );
 
