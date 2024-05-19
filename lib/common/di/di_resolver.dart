@@ -1,5 +1,7 @@
+import 'package:country_select_app/features/countries/data/repository/countries_repository_impl.dart';
 import 'package:country_select_app/features/countries/data/service/countries_service.dart';
 import 'package:country_select_app/features/countries/data/service/countries_service_impl.dart';
+import 'package:country_select_app/features/countries/domain/repository/countries_repository.dart';
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 
@@ -10,6 +12,7 @@ class DiResolver {
   static Future<void> register() async {
     _registerNetworkingClient();
     _registerServices();
+    _registerRepositories();
   }
 
   /// In this app we use Dio library for networking client.
@@ -32,5 +35,10 @@ class DiResolver {
   static void _registerServices() {
     _di.registerLazySingleton<CountriesService>(
         () => CountriesServiceImpl(apiClient: _di.get<Dio>()));
+  }
+
+  static void _registerRepositories() {
+    _di.registerLazySingleton<CountriesRepository>(
+        () => CountriesRepositoryImpl(service: _di.get<CountriesService>()));
   }
 }
