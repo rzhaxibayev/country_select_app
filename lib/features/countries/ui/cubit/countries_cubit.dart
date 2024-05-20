@@ -43,6 +43,7 @@ class CountriesCubit extends Cubit<CountriesState> {
 
           emit(
             loaded.copyWith(
+              selectedCountry: country,
               countryStateCondition: CountryStateCondition.loaded(
                 countryStates: countryStates,
               ),
@@ -51,6 +52,7 @@ class CountriesCubit extends Cubit<CountriesState> {
         } on Object catch (_) {
           emit(
             loaded.copyWith(
+              selectedCountry: country,
               countryStateCondition: const CountryStateCondition.failed(),
             ),
           );
